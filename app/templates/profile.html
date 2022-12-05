@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock%}
+
+
+{% block content %}
+<section class="content-wrapper">
+    <h2>User Info</h2>
+    <p>
+        Name: {{current_user.name}}<br>
+        Email: {{current_user.email}}<br>
+        Username: {{current_user.username}}<br>
+        Member since: {{current_user.joined_at.date()}}<br>
+    </p>    
+</section>
+<section class="form-wrapper">
+    <h2>Change password</h2>
+    <form method="post" action="{{url_for('auth.change_password')}}">
+        {{form.hidden_tag()}}
+        {{form.password.label}}
+        {{form.password()}}
+        {{form.new_password.label}}
+        {{form.new_password()}}
+        {{form.confirm.label}}
+        {{form.confirm()}}
+        {{form.submit()}}
+    </form>
+</section>
+
+{% endblock %}

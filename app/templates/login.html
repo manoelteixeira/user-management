@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section class="form-wrapper">
+    <h1>{% block title %}Login{% endblock%}</h1>
+    <form method="post">
+        {{form.hidden_tag()}}
+        {{form.username.label}}
+        {{form.username()}}
+        {{form.password.label}}
+        {{form.password()}}
+        <span>{{form.remember()}} {{form.remember.label}}</span>
+        {{form.submit()}}
+    </form>
+    <a href="{{url_for('auth.forgot_password')}}">Forgot password?</a>
+</section>
+{% endblock %}

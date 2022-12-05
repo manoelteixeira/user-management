@@ -1,0 +1,108 @@
+/* Navbar */
+nav { 
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+nav h1 { 
+    flex: auto;
+    margin: 0;
+}
+
+nav h1 a { 
+    text-decoration: none;
+    color: black;
+    padding: 0.25rem 0.5rem;
+}
+
+nav ul  { 
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a{
+    color: black;
+}
+
+nav ul li a, nav ul li span, header .action { 
+    display: block;
+    padding: 0.5rem;
+}
+
+/* Navbar End*/
+
+/* .content */
+.content { 
+    padding: 0 1rem 1rem;
+}
+
+.content form { 
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .content end */
+
+/* .form-wrapper */
+.form-wrapper{
+    margin: 3em auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.form-wrapper h1{
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: auto;
+}
+
+.form-wrapper form{
+    width: 90%;
+}
+
+.form-wrapper form label{
+    /* padding-top: 1em; */
+    padding-top: 0.5em;
+    padding-bottom: 5px;
+}
+
+.form-wrapper form input[type=submit]{
+    margin: 1em auto;
+    padding: 0.5em;
+    width: fit-content;
+    font-weight: bold;
+}
+
+
+/* .form-wrapper End */
+
+/* .flash */
+.flash { 
+    margin: 1em 0;
+    padding: 1em;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+}
+/* .flash End */
+
+.content-wrapper{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.content-wrapper h2{
+    text-align: center;
+}

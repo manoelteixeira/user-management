@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title> {% block title %}{% endblock%} </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- Navbar -->
+<nav>
+    <h1> <a href="{{url_for('index.index')}}">User Management</a></h1>
+    {% if current_user.is_authenticated %}
+      <ul>  
+        <li><a href="{{url_for('profile.profile')}}">Profile</a></li>
+        <li><a href="{{url_for('auth.logout')}}">Logout</a></li>        
+      </ul>
+    {% else %}
+      <ul>
+        {% if 'login' not in request.path  %}
+          <li><a href="{{url_for('auth.login')}}">Login</a></li>
+        {% endif %}
+        {% if 'register' not in request.path %}
+          <li><a href="{{url_for('auth.register')}}">Register</a></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+</section>
