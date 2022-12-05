@@ -133,7 +133,7 @@ After activating the virtual environment, setting up the Flask virtual environme
     ```
     or 
     ```
-    $ pipenv install --dev pytest
+    $ pipenv install --dev
     ```
 3. Running tests:
     ```shell
