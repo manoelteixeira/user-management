@@ -87,6 +87,7 @@ def logout():
     flash('User Logged off.')
     return redirect(url_for('auth.login'))
 
+
 @bp.route('/change-password', methods=['POST'])
 @login_required
 def change_password():
@@ -112,6 +113,3 @@ def change_password():
             flash('Password is incorrect.')
     return redirect(url_for('profile.profile'))
 
-@bp.route('/forgot-password', methods=['GET','POST'])
-def forgot_password():
-    return render_template('forgot_password.html')

@@ -9,4 +9,7 @@ if __name__ == '__main__':
     app = create_app(app_settings)
     app.run(debug=False, host='0.0.0.0')
 else:
+    '''
+    If app.py is runned using "flask run"
+    '''
     app = create_app()

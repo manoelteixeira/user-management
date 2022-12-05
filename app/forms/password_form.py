@@ -25,8 +25,3 @@ class ChangePasswordForm(FlaskForm):
                                         ])
     submit = SubmitField(label='Continue')
     
-class ForgotPasswordForm(FlaskForm):
-        username = StringField(label='Username',
-                               validators=[DataRequired()])
-        email = EmailField(label='Email',
-                           validators=[DataRequired()])

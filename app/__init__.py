@@ -33,14 +33,10 @@ def create_app(config_file=None):
 
 def register_blueprint(app):
     from app.blueprints import index_bp
-    # from app.blueprints import register_bp
-    # from app.blueprints import login_bp
     from app.blueprints import auth_bp
     from app.blueprints import profile_bp
     
     app.register_blueprint(index_bp)
-    # app.register_blueprint(register_bp)
-    # app.register_blueprint(login_bp)
     app.register_blueprint(profile_bp)
     app.register_blueprint(auth_bp)
     
@@ -61,8 +57,10 @@ def initialize_extensions(app):
 @click.command('init-db')
 def init_db():
     '''
+    Usage: $> Flask init-db 
     Drop all tables if any exists and create new tables.
     '''
+    
     inspector = db.inspect(db.engine)
     tables = inspector.get_table_names()
     if len(tables) > 0:
